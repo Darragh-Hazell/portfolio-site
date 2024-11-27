@@ -34,7 +34,8 @@
 >
     <li th:insert="${current} == 'about' ? ~{fragments/common :: nav-item-current ('About')} : ~{fragments/common :: nav-item ('about', 'About')}"></li>
     <li th:insert="${current} == 'projects' ? ~{fragments/common :: nav-item-current ('Projects')} : ~{fragments/common :: nav-item ('projects', 'Projects')}"></li>
-    <li th:insert="${current} == 'contact' ? ~{fragments/common :: nav-item-current ('Contact')} : ~{fragments/common :: nav-item ('contact', 'Contact')}"></li>
+    <li th:insert="~{fragments/common :: nav-item-link ('github', 'GitHub')}"></li>
+    <li th:insert="~{fragments/common :: nav-item-link ('linkedin', 'Linkedin')}"></li>
 </ul>
 
 <button th:fragment="nav-item-current (text)"
@@ -54,6 +55,13 @@
         name="main-change"
         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
 ></button>
+
+<a th:fragment="nav-item-link (id, text)"
+   th:id="${id}"
+   th:text="${text}"
+   th:href="#{'nav.link.' + ${id}}"
+   class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+></a>
 
 <!-- Footer -->
 
