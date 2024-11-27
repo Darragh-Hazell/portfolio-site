@@ -16,6 +16,8 @@ public class WebSecurityConfig {
                 customizer -> customizer.anyRequest().permitAll()
         );
 
+        http.cors(Customizer.withDefaults());
+
         return http.build();
     }
 }

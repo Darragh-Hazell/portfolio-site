@@ -8,9 +8,30 @@
 
 <!-- About -->
 
-<section th:fragment="about">
-
+<section th:fragment="about" class="bg-white">
+    <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+        <div class="max-w-screen-md mb-8 lg:mb-16">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Software Engineering</h2>
+            <p class="text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
+        </div>
+        <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
+            <div th:replace="~{fragments/main :: skill ('java', 'Java - Spring')}"></div>
+            <div th:replace="~{fragments/main :: skill ('csharp', 'C# - ASP.NET')}"></div>
+            <div th:replace="~{fragments/main :: skill ('python', 'Python')}"></div>
+            <div th:replace="~{fragments/main :: skill ('web', 'Web Development')}"></div>
+            <div th:replace="~{fragments/main :: skill ('api', 'API Development')}"></div>
+            <div th:replace="~{fragments/main :: skill ('cloud', 'Cloud Development')}"></div>
+        </div>
+    </div>
 </section>
+
+<div th:fragment="skill (skill, title)">
+    <div class="flex justify-center items-center mb-4 w-10 h-10">
+        <img th:src="@{'/images/' + ${skill} + '.png'}" th:alt="${skill} + ' Icon'">
+    </div>
+    <h3 th:text="${title}" class="mb-2 text-xl font-bold"></h3>
+    <p th:text="#{'about.skill.' + ${skill}}" class="text-gray-500">Keep your company’s lights on with customizable, iterative, and structured workflows built for all efficient teams and individual.</p>
+</div>
 
 <!-- Projects -->
 
