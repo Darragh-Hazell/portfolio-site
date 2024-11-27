@@ -15,14 +15,9 @@ import java.util.logging.Logger;
 @RequestMapping("/hx")
 public class HxController {
 
-    private final Logger logger = Logger.getLogger(HxController.class.getName());
-
     @GetMapping("/main/{content}")
     @HxRequest(target = "main", triggerName="main-change")
     public HtmxResponse mainContent(@PathVariable String content) {
-
-        logger.info(content);
-
         var response = HtmxResponse.builder();
 
         response.view("fragments/main :: " + content);

@@ -2,9 +2,26 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" th:href="@{/images/favicon.ico}">
     <title th:text="#{error.title}"></title>
+    <!-- TailwindCSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/styles/main.css}" rel="stylesheet">
 </head>
 <body class="flex flex-col h-screen bg-white">
+
+<section>
+    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center">
+            <h1 class="mb-4 text-5xl tracking-tight font-extrabold lg:text-7xl text-primary-600">Uh oh</h1>
+            <p class="mb-4 text-lg font-light text-gray-500">You're either trying to break the site or you got lost</p>
+            <a href="/" class="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center my-4">Back to Site</a>
+        </div>
+    </div>
+</section>
+
+<!-- Flowbite -->
+<script th:src="@{/scripts/flowbite.min.js}"></script>
 
 </body>
 </html>
