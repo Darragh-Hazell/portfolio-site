@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{index.title}"></title>
+    <!-- TailwindCSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/styles/main.css}" rel="stylesheet">
+    <!-- htmx -->
+    <script th:src="@{/scripts/htmx.min.js}"></script>
+    <script th:src="@{/scripts/preload.min.js}"></script>
+</head>
+<body class="flex flex-col h-screen bg-white">
+
+<nav th:replace="~{fragments/common :: nav (${current})}"></nav>
+
+<main th:insert="~{fragments/main :: ${current}}"
+      id="main"
+      class="flex flex-col flex-grow"
+></main>
+
+<footer th:replace="~{fragments/common :: footer}"></footer>
+
+<!-- Flowbite -->
+<script th:src="@{/scripts/flowbite.min.js}"></script>
+
+</body>
+</html>
